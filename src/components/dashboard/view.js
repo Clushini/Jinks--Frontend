@@ -1,11 +1,12 @@
 import React from 'react';
 import { Route, Redirect } from "react-router-dom";
 import navitems from './utils/nav';
-import Home from '../views/home/index';
+import UserBar from './userbar';
 
 const View = (props) => {
     return(
         <div id="viewwrap">
+            <UserBar />
             <Route exact path="/"><Redirect to="/home" /></Route>
             {
                 navitems.map(item => {

@@ -2,7 +2,7 @@ import React from 'react';
 
 const LinkManager = (props) => {
     return(
-        <div>
+        <div className="pagewrap">
             Link Management
         </div>
     );

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const UserManagement = (props) => {
+const NoteManagement = (props) => {
     return(
         <div className="pagewrap">
-            User Management
+            Note Management
         </div>
     );
 }
 
-export default UserManagement;
+export default NoteManagement;

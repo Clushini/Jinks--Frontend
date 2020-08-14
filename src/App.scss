@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 .fade-in {
     animation: fadeIn ease 10s;
@@ -57,7 +58,7 @@ html, body, #root, #main, #dashwrap {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    font-family: "Roboto";
+    font-family: "Quicksand";
 }
 
 div {
@@ -73,6 +74,17 @@ a {
     text-decoration: none;
 }
 
+.MuiGrid-root {
+    img {
+        height: 19px;
+        margin-top: -5px;
+    }
+}
+
+.MuiInputBase-input {
+    color: #777777 !important;
+}
+
 #main {
     display: flex;
 }
@@ -84,7 +96,8 @@ a {
 #navwrap {
     display: flex;
     flex-direction: column;
-    background-color: #0361a5;
+    background: rgb(55,155,255);
+background: linear-gradient(323deg, rgba(55,155,255,1) 0%, rgba(17,82,147,1) 100%);
     position: relative;
 
     .logo {
@@ -114,12 +127,12 @@ a {
             }
 
             &:hover {
-                background-color: #078be9;
+                background-color: #4791db;
             }
         }
 
         .activebutton {
-            background-color: #078be9;
+            background-color: #4791db;
         }
     }
 
@@ -132,7 +145,7 @@ a {
         width: 20px;
         height: 20px;
         text-align: center;
-        line-height: 20px;
+        line-height: 18px;
         cursor: pointer;
         -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
         -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
@@ -148,8 +161,113 @@ a {
 
 #viewwrap {
     flex-grow: 1;
+    background-color: #f8f7fc;
 }
 
-.test {
-    background-color: #ececec;
+.userbar {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    height: 70px;
+    padding-left: 40px;
+    padding-right: 40px;
+    justify-content: space-between;
+
+    .userwrap {
+        width: 350px;
+        height: 50px;
+        display: flex;
+
+        .left {
+            border-right: 1px solid lightgrey;
+            padding-right: 25px;
+            display: flex;
+            align-items: center;
+
+            .info {
+                padding-right: 15px;
+
+                h3, h4 {
+                    padding: 0px;
+                    margin: 0px;
+                    text-align: right;
+                    color: #777777;
+                }
+
+                h4 {
+                    font-weight: 100;
+                }
+            }
+
+            .arrow {
+                cursor: pointer;
+                padding-left: 15px;
+                img {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .right {
+            padding-left: 25px;
+            display: flex;
+            align-items: center;
+            img {
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.dropmodal {
+    height: 300px;
+    width: 210px;
+    top: 0;
+    position: absolute;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.25);
+    border-right: 3px solid #4791db;
+}
+
+.pagewrap {
+    height: calc(100% - 152px);
+    padding: 40px;
+    overflow: auto;
+
+    ::-webkit-scrollbar {
+        width: 1em;
+    }
+       
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+       
+    ::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+    }
+}
+
+.pagewrap::-webkit-scrollbar {
+    width: 1em;
+}
+   
+.pagewrap::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+   
+.pagewrap::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
 }
