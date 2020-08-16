@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import navitems from './utils/nav';
 import Logo from '../../media/logo.png';
+import HelpIcon from '../../media/icons/help.png';
 
 const determineCollapsedButton = (state) => {
     if (!state) {
@@ -49,6 +50,18 @@ const Navigation = (props) => {
                                 </Link>
                     })
                 }
+            </div>
+
+            <div className="bottombutton">
+                <b />
+                <Link to={"/helpus"}>
+                    <Button variant="text" color="primary" className={(currentNavItem == '/helpus') ? "activebutton" : ""} style={buttonStyle} onClick={() => setCurrentNavItem('/helpus')}>
+                        <img src={HelpIcon} alt="link" style={iconStyle}/>
+                        {
+                            !collapsed && <div>Report Bug / Issue</div>
+                        }
+                    </Button>
+                </Link>
             </div>
 
         </div>

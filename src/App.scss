@@ -97,7 +97,7 @@ a {
     display: flex;
     flex-direction: column;
     background: rgb(55,155,255);
-background: linear-gradient(323deg, rgba(55,155,255,1) 0%, rgba(17,82,147,1) 100%);
+    background: linear-gradient(323deg, rgba(55,155,255,1) 0%, rgba(17,82,147,1) 100%);
     position: relative;
 
     .logo {
@@ -107,7 +107,7 @@ background: linear-gradient(323deg, rgba(55,155,255,1) 0%, rgba(17,82,147,1) 100
         }
     }
 
-    .linkwrap {
+    .linkwrap, .bottombutton {
         display: flex;
         flex-direction: column;
         button {
@@ -133,6 +133,22 @@ background: linear-gradient(323deg, rgba(55,155,255,1) 0%, rgba(17,82,147,1) 100
 
         .activebutton {
             background-color: #4791db;
+        }
+    }
+
+    .bottombutton {
+        display: flex;
+        flex-grow: 1;
+        a {
+            justify-self: flex-end;
+        }
+
+        b {
+            flex-grow: 1;
+        }
+
+        .activebutton {
+            background-color: #4791db !important;
         }
     }
 
@@ -193,6 +209,10 @@ background: linear-gradient(323deg, rgba(55,155,255,1) 0%, rgba(17,82,147,1) 100
                     margin: 0px;
                     text-align: right;
                     color: #777777;
+                }
+
+                h3 {
+                    font-weight: 500;
                 }
 
                 h4 {
@@ -270,4 +290,63 @@ background: linear-gradient(323deg, rgba(55,155,255,1) 0%, rgba(17,82,147,1) 100
 .pagewrap::-webkit-scrollbar-thumb {
     background-color: darkgrey;
     outline: 1px solid slategrey;
+}
+
+.pageheader {
+    padding-bottom: 20px;
+    h1, h2 {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    h1 {
+        font-weight: 300;
+    }
+    h2 {
+        font-weight: 100;
+        font-size: 15px;
+        padding-left: 2px;
+    }
+}
+
+.tilewrap {
+    display: flex;
+    justify-content: space-between;
+
+    .tile {
+        display: flex;
+        width: calc(23% - 80px);
+        height: 80px;
+        background-color: #ffffff;
+        border-radius: 6px;
+        padding: 40px;
+        -webkit-box-shadow: 0px 3px 2px -1px rgba(194,194,194,1);
+        -moz-box-shadow: 0px 3px 2px -1px rgba(194,194,194,1);
+        box-shadow: 0px 3px 2px -1px rgba(194,194,194,1);
+        align-items: center;
+
+        div {
+            padding-left: 40px;
+        }
+
+        h1, h3 {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 200;
+        }
+
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Redirect } from "react-router-dom";
 import navitems from './utils/nav';
 import UserBar from './userbar';
+import HelpUs from '../views/helpus/index';
 
 const View = (props) => {
     return(
@@ -13,6 +14,7 @@ const View = (props) => {
                     return <Route path={item.path} component={item.component} />
                 })
             }
+            <Route path={'/helpus'} component={HelpUs} />
         </div>
     )
 }
