@@ -10,13 +10,13 @@ const UserBar = (props) => {
 
     return(
         <div className="userbar">
-            <InputWithIcon />
+            <InputWithIcon/>
             <div className="userwrap">
                 <div className="left">
-                    { currentDrop == "profile" && <Drop clickedOutside={() => setCurrentDrop(null)} margintop="60px"/> }
+                    { currentDrop == "profile" && <Drop submitLogout={props.submitLogout} clickedOutside={() => setCurrentDrop(null)} margintop="60px"/> }
                     <div className="info">
-                        <h3>Aaron Lilla</h3>
-                        <h4>Master</h4>
+                        <h3>{props.userdata.email}</h3>
+                        <h4>Alpha User</h4>
                     </div>
                     <img src={ProfilePicPlaceholder} alt="profile"/>
                     <div className="arrow" onClick={() => setCurrentDrop((currentDrop == "profile") ? null : "profile")}>

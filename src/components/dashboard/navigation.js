@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
-import navitems from './utils/nav';
+import { navitems, quicknav } from './utils/nav';
 import Logo from '../../media/logo.png';
 import HelpIcon from '../../media/icons/help.png';
 
@@ -22,8 +22,7 @@ const Navigation = (props) => {
     let collapseButtonStyle = collapsed ? {marginLeft: "70px", marginTop: "30px"} : {marginLeft: "230px", marginTop: "50px"};
     let buttonStyle = collapsed ? {justifyContent: "center", paddingLeft: "8px"} : {justifyContent: "start"};
     let iconStyle = collapsed ? {width: "23px", marginRight: "0px"} : {width: "17px"};
-
-    console.log(window.location.pathname)
+    
     return (
         <div id="navwrap" style={wrapStyle}>
 
@@ -34,6 +33,21 @@ const Navigation = (props) => {
             <div className="collapse" style={collapseButtonStyle} onClick={() => setCollapsed(!collapsed)}>
                 {
                     determineCollapsedButton(collapsed)
+                }
+            </div>
+
+            <div className="linkwrap">
+                {
+                    quicknav.map(navitem => {
+                        return  <Link to={navitem.path}>
+                                    <Button variant="text" color="primary" className={(currentNavItem == navitem.path) ? "activebutton" : ""} style={buttonStyle} onClick={() => setCurrentNavItem(navitem.path)}>
+                                        <img src={navitem.icon} alt="link" style={iconStyle}/>
+                                        {
+                                            !collapsed && <div>{navitem.name}</div>
+                                        }
+                                    </Button>
+                                </Link>
+                    })
                 }
             </div>
 

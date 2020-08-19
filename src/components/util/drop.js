@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import Button from '@material-ui/core/Button';
 
 const Drop = (props) => {
     const wrapperRef = useRef(null);
@@ -20,7 +21,9 @@ const Drop = (props) => {
 
     return(
         <div className="dropmodal" style={{marginTop: props.margintop}} ref={wrapperRef}>
-            test
+          <Button variant="contained" color="primary" onClick={props.submitLogout}>
+              Logout
+          </Button>
         </div>
     )
 }
